@@ -67,6 +67,22 @@ namespace BinarySearchTree
                 Display(root.rChild);
 
         }
-        
+        public int DepthofTree(BinaryNode<T> bnode)
+        {
+            if (bnode == null)
+                return 0;
+            else
+            {
+                /* compute the depth of each subtree */
+                int lDepth = DepthofTree(bnode.lChild);
+                int rDepth = DepthofTree(bnode.rChild);
+
+                /* use the larger one */
+                if (lDepth > rDepth)
+                    return (lDepth + 1);
+                else
+                    return (rDepth + 1);
+            }
+        }
     }
 }

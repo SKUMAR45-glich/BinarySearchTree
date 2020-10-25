@@ -12,8 +12,15 @@ namespace BinarySearchTree
             bst.AddData(56);
             bst.AddData(30);
             bst.AddData(70);
+            bst.AddData(22);
+            bst.AddData(40);
+            bst.AddData(11);
+            bst.AddData(3);
+            bst.AddData(67);
 
             bst.Display(bst.rootNode);
+            int h = bst.DepthofTree(bst.rootNode);
+            Console.WriteLine("Height is:" + h);
             
         }
     }
