@@ -84,5 +84,32 @@ namespace BinarySearchTree
                     return (rDepth + 1);
             }
         }
+        public bool CheckNode(T data)
+        {
+            if (leaveNode == null)
+                return false;
+
+            if (leaveNode.data.CompareTo(data) == 0)
+                return true;
+
+            else if (leaveNode.data.CompareTo(data) > 0)
+            {
+                leaveNode = leaveNode.lChild;
+                return CheckNode(data);
+            }
+            else
+            {
+                leaveNode = leaveNode.rChild;
+                return CheckNode(data);
+            }
+        }
+
+        public void SearchValue(T data)
+        {
+            if (CheckNode(data))
+                Console.WriteLine($"{data} Found...");
+            else
+                Console.WriteLine($"{data} Absent");
+        }
     }
 }
