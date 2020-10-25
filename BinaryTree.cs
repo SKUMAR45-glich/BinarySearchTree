@@ -88,5 +88,32 @@ namespace BinarySearchTree
             }
             return maxSize - 1;
         }
+        public bool CheckPresence(T data)
+        {
+            if (parentNode == null)
+                return false;
+
+            if (parentNode.data.CompareTo(data) == 0)
+                return true;
+
+            else if (parentNode.data.CompareTo(data) > 0)
+            {
+                parentNode = parentNode.lChild;
+                return CheckPresence(data);
+            }
+            else
+            {
+                parentNode = parentNode.rChild;
+                return CheckPresence(data);
+            }
+        }
+
+        public void SearchValue(T data)
+        {
+            if (CheckPresence(data))
+                Console.WriteLine($"{data} Found...");
+            else
+                Console.WriteLine($"{data} Absent");
+        }
     }
 }

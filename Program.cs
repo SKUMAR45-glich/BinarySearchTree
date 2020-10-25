@@ -21,6 +21,8 @@ namespace BinarySearchTree
             Console.WriteLine($"\nDeepth of Bst : {bst.CheckDeepth()}");
             Console.WriteLine($"Total number of elements {bst.NumberOfElements}");
             bst.Display(bst.rootNode);
+            bst.SearchValue(4);
+            bst.SearchValue(11);
         }
     }
 }
